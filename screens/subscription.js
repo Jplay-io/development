@@ -50,7 +50,7 @@ const Subscription = ({navigation}) => {
                 h={9}
                 w={110}
                 alt="j_play"
-                source={require('../assets/j_play1.png')}
+                source={require('../assets/j_play.png')}
               />
             </Row>
             <Row my={1} alignItems="center">
@@ -101,7 +101,11 @@ const Subscription = ({navigation}) => {
               );
             })}
           </VStack>
-          <Button mt={8} h={60} backgroundColor="#BC082D">
+          <Button
+            onPress={() => navigation.navigate('Main')}
+            mt={8}
+            h={60}
+            backgroundColor="#BC082D">
             Get Subscription
           </Button>
         </Flex>
