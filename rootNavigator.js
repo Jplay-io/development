@@ -16,6 +16,7 @@ import SignUp from './screens/signUp';
 import Subscription from './screens/subscription';
 
 import { Text } from 'native-base';
+import Profile from './screens/profile';
 
 
 const Stack = createStackNavigator();
@@ -65,7 +66,7 @@ const RootNavigator = () => {
     return(
         <NavigationContainer>
             <Stack.Navigator
-              initialRouteName="Home"
+              initialRouteName="Profile"
               screenOptions={{
                 headerShown:false,
               }}>
@@ -96,6 +97,13 @@ const RootNavigator = () => {
                 }}
                 name="Home"
                 component={HomeStackNavigator}
+              />
+               <Stack.Screen
+                options={{
+                  gestureEnabled:false
+                }}
+                name="Profile"
+                component={Profile}
               />
             </Stack.Navigator>
           </NavigationContainer>
