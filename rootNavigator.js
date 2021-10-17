@@ -14,8 +14,9 @@ import Icon3 from 'react-native-vector-icons/FontAwesome5';
 import GetStart from './screens/getStart';
 import SignUp from './screens/signUp';
 import Subscription from './screens/subscription';
+import Details from './screens/Details';
+import Search from './screens/Search/search';
 
-import { Text } from 'native-base';
 
 
 const Stack = createStackNavigator();
@@ -65,7 +66,7 @@ const RootNavigator = () => {
     return(
         <NavigationContainer>
             <Stack.Navigator
-              initialRouteName="Home"
+              initialRouteName="Search"
               screenOptions={{
                 headerShown:false,
               }}>
@@ -96,6 +97,20 @@ const RootNavigator = () => {
                 }}
                 name="Home"
                 component={HomeStackNavigator}
+              />
+              <Stack.Screen
+                options={{
+                  gestureEnabled:false
+                }}
+                name="Details"
+                component={Details}
+              />
+              <Stack.Screen
+                options={{
+                  gestureEnabled:false
+                }}
+                name="Search"
+                component={Search}
               />
             </Stack.Navigator>
           </NavigationContainer>
