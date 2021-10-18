@@ -9,6 +9,7 @@ import {
   Center,
   View,
   Image,
+  Pressable
 } from 'native-base';
 import {Dimensions} from 'react-native';
 import {ImageBackground, useWindowDimensions} from 'react-native';
@@ -28,10 +29,10 @@ const FirstRoute = () => (
             w="100%"
             h={150}
             borderRadius={16}
-            source={require('../../assets/image11.png')}
+            source={require('../../../assets/image11.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium">
+          <Text fontSize={12} fontWeight="medium" color='#fff'>
             Attack of titans
           </Text>
         </Flex>
@@ -40,10 +41,10 @@ const FirstRoute = () => (
             w="100%"
             h={150}
             borderRadius={16}
-            source={require('../../assets/image5.png')}
+            source={require('../../../assets/image5.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium">
+          <Text fontSize={12} fontWeight="medium" color='#fff'>
             Mirai of the Future
           </Text>
         </Flex>
@@ -52,10 +53,10 @@ const FirstRoute = () => (
             h={150}
             borderRadius={16}
             w="100%"
-            source={require('../../assets/image8.png')}
+            source={require('../../../assets/image8.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium">
+          <Text fontSize={12} fontWeight="medium" color='#fff'>
             Doraemon the Mo..
           </Text>
         </Flex>
@@ -64,10 +65,10 @@ const FirstRoute = () => (
             w="100%"
             h={150}
             borderRadius={16}
-            source={require('../../assets/image6.png')}
+            source={require('../../../assets/image6.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium">
+          <Text fontSize={12} fontWeight="medium" color='#fff'>
             Title
           </Text>
         </Flex>
@@ -76,10 +77,10 @@ const FirstRoute = () => (
             w="100%"
             h={150}
             borderRadius={16}
-            source={require('../../assets/image9.png')}
+            source={require('../../../assets/image9.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium">
+          <Text fontSize={12} fontWeight="medium" color='#fff'>
             Title
           </Text>
         </Flex>
@@ -88,10 +89,10 @@ const FirstRoute = () => (
             w="100%"
             h={150}
             borderRadius={16}
-            source={require('../../assets/image4.png')}
+            source={require('../../../assets/image4.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium">
+          <Text fontSize={12} fontWeight="medium" color='#fff'>
             Title
           </Text>
         </Flex>
@@ -180,7 +181,7 @@ const renderScene = SceneMap({
   second: SecondRoute,
 });
 
-const Details = () => {
+const Details = ({navigation}) => {
   const layout = useWindowDimensions();
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
@@ -206,7 +207,7 @@ const Details = () => {
         <Flex>
           <ImageBackground
             resizeMode="cover"
-            source={require('../../assets/image10.png')}>
+            source={require('../../../assets/image10.png')}>
             <Flex h={250}>
               <LinearGradient
                 start={{x: 0, y: 0}}
@@ -219,7 +220,9 @@ const Details = () => {
                   position: 'relative',
                 }}>
                 <Flex m={4} alignItems="flex-end" flex={1}>
-                  <Flex
+                  <Pressable
+                  onPress={()=>navigation.goBack()}
+                  
                     w={10}
                     h={10}
                     display="flex"
@@ -229,7 +232,7 @@ const Details = () => {
                     borderWidth={1}
                     borderColor="#F1F1F1">
                     <Icon name="times" size={20} color="#F1F1F1" />
-                  </Flex>
+                  </Pressable>
                 </Flex>
                 <Flex m={4} flex={2} justifyContent="flex-end">
                   <Text fontSize={28} color="#fff" fontWeight="bold">

@@ -37,6 +37,7 @@ const GetStart = ({navigation}) => {
 
           <Button
             mt={8}
+            borderRadius={8}
             h={60}
             backgroundColor="#BC082D"
             onPress={() => navigation.navigate('signUp')}>

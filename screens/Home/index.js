@@ -106,7 +106,7 @@ const Home = ({navigation}) => {
             </LinearGradient>
           </Flex>
         </ImageBackground>
-        <LastVideos />
+        <LastVideos navigation={navigation} />
         <Trending />
         <Anime />
         <Action />

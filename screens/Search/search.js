@@ -1,19 +1,29 @@
 import React, {useState} from 'react';
-import {Text, Flex, Input, Column, Row, Pressable, Box} from 'native-base';
-import {Dimensions, ImageBackground} from 'react-native';
+import {
+  Text,
+  Flex,
+  Input,
+  Column,
+  Row,
+  Pressable,
+  Box,
+  ScrollView,
+} from 'native-base';
 import Icon from 'react-native-vector-icons/Fontisto';
-import LinearGradient from 'react-native-linear-gradient';
+import DefaultScreen from './components/defaultScreen';
+import ByDate from './components/byDate';
+import ByActor from './components/byActor';
+import Similar from './components/similar';
+import Result from './components/result';
 
-const Search = () => {
+const Search = ({navigation}) => {
   const [name, setName] = useState('');
-
-  const width = Dimensions.get('window').width;
 
   return (
     <Flex flex={1} safeArea bg="#151F28">
       <Column flex={1}>
-        <Flex flex={1} bg="#f1f1f122" px={4} justifyContent="center">
-          <Row my={2} alignItems="center">
+        <Flex bg="#f1f1f122" p={4} justifyContent="center">
+          <Row my={1} alignItems="center">
             <Input
               w={name.length > 0 ? '80%' : '100%'}
               bg="#151F28"
@@ -42,175 +52,19 @@ const Search = () => {
             )}
           </Row>
         </Flex>
-        <Flex p={4} flex={5}>
-          <Row justifyContent="space-between">
-            <ImageBackground
-              imageStyle={{borderRadius: 16}}
-              resizeMode="cover"
-              source={require('../../assets/anime.png')}>
-              <Box justifyContent="flex-end" w={width / 3.5} h={width / 3.5}>
-                <LinearGradient
-                  start={{x: 0, y: 0.3}}
-                  end={{x: 0, y: 1}}
-                  colors={['#00000000', '#000000']}
-                  style={{
-                    flex: 1,
-                  }}>
-                  <Flex flex={1} justifyContent="flex-end">
-                    <Text
-                      m={3}
-                      fontSize={12}
-                      fontWeight="semibold"
-                      color="#fff">
-                      Anime
-                    </Text>
-                  </Flex>
-                </LinearGradient>
-              </Box>
-            </ImageBackground>
-            <ImageBackground
-              imageStyle={{borderRadius: 16}}
-              resizeMode="cover"
-              source={require('../../assets/comedy.png')}>
-              <Box
-                justifyContent="flex-end"
-                borderRadius={16}
-                w={width / 3.5}
-                h={width / 3.5}>
-                <LinearGradient
-                  start={{x: 0, y: 0.3}}
-                  end={{x: 0, y: 1}}
-                  colors={['#00000000', '#000000']}
-                  style={{
-                    flex: 1,
-                  }}>
-                  <Flex flex={1} justifyContent="flex-end">
-                    <Text
-                      m={3}
-                      fontSize={12}
-                      fontWeight="semibold"
-                      color="#fff">
-                      Comedy
-                    </Text>
-                  </Flex>
-                </LinearGradient>
-              </Box>
-            </ImageBackground>
-            <ImageBackground
-              imageStyle={{borderRadius: 16}}
-              resizeMode="cover"
-              source={require('../../assets/thriller.png')}>
-              <Box
-                justifyContent="flex-end"
-                borderRadius={16}
-                w={width / 3.5}
-                h={width / 3.5}>
-                <LinearGradient
-                  start={{x: 0, y: 0.3}}
-                  end={{x: 0, y: 1}}
-                  colors={['#00000000', '#000000']}
-                  style={{
-                    flex: 1,
-                  }}>
-                  <Flex flex={1} justifyContent="flex-end">
-                    <Text
-                      m={3}
-                      fontSize={12}
-                      fontWeight="semibold"
-                      color="#fff">
-                      Thriller{' '}
-                    </Text>
-                  </Flex>
-                </LinearGradient>
-              </Box>
-            </ImageBackground>
-          </Row>
-          <Row my={2} justifyContent="space-between">
-            <ImageBackground
-              imageStyle={{borderRadius: 16}}
-              resizeMode="cover"
-              source={require('../../assets/action.png')}>
-              <Box
-                justifyContent="flex-end"
-                borderRadius={16}
-                w={width / 3.5}
-                h={width / 3.5}>
-                <LinearGradient
-                  start={{x: 0, y: 0.3}}
-                  end={{x: 0, y: 1}}
-                  colors={['#00000000', '#000000']}
-                  style={{
-                    flex: 1,
-                  }}>
-                  <Flex borderRadius={16} flex={1} justifyContent="flex-end">
-                    <Text
-                      m={3}
-                      fontSize={12}
-                      fontWeight="semibold"
-                      color="#fff">
-                      Action
-                    </Text>
-                  </Flex>
-                </LinearGradient>
-              </Box>
-            </ImageBackground>
-            <ImageBackground
-              imageStyle={{borderRadius: 16}}
-              resizeMode="cover"
-              source={require('../../assets/comedy.png')}>
-              <Box
-                justifyContent="flex-end"
-                borderRadius={16}
-                w={width / 3.5}
-                h={width / 3.5}>
-                <LinearGradient
-                  start={{x: 0, y: 0.3}}
-                  end={{x: 0, y: 1}}
-                  colors={['#00000000', '#000000']}
-                  style={{
-                    flex: 1,
-                  }}>
-                  <Flex flex={1} justifyContent="flex-end">
-                    <Text
-                      m={3}
-                      fontSize={12}
-                      fontWeight="semibold"
-                      color="#fff">
-                      Family
-                    </Text>
-                  </Flex>
-                </LinearGradient>
-              </Box>
-            </ImageBackground>
-            <ImageBackground
-              imageStyle={{borderRadius: 16}}
-              resizeMode="cover"
-              source={require('../../assets/documentary.png')}>
-              <Box
-                justifyContent="flex-end"
-                borderRadius={16}
-                w={width / 3.5}
-                h={width / 3.5}>
-                <LinearGradient
-                  start={{x: 0, y: 0.3}}
-                  end={{x: 0, y: 1}}
-                  colors={['#00000000', '#000000']}
-                  style={{
-                    flex: 1,
-                  }}>
-                  <Flex flex={1} justifyContent="flex-end">
-                    <Text
-                      m={3}
-                      fontSize={12}
-                      fontWeight="semibold"
-                      color="#fff">
-                      Documentary
-                    </Text>
-                  </Flex>
-                </LinearGradient>
-              </Box>
-            </ImageBackground>
-          </Row>
+        <Flex flex={5}>
+          <ScrollView>
+            {name.length === 0 ? (
+              <DefaultScreen />
+            ) : (
+              <>
+                <Result name={name} />
+                <ByDate name={name} />
+                <ByActor name={name} />
+                <Similar name={name} />
+              </>
+            )}
+          </ScrollView>
         </Flex>
       </Column>
     </Flex>

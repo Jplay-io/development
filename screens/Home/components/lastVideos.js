@@ -1,10 +1,10 @@
 import React from 'react';
-import {Flex, Text, ScrollView, Row, Box, Image, Progress} from 'native-base';
+import {Flex, Text, ScrollView, Row, Box, Image, Progress, Pressable} from 'native-base';
 import {ImageBackground} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const LastVideos = () => {
+const LastVideos = ({navigation}) => {
   return (
     <Flex mt={2} flex={5}>
       <Text m={4} color="#fff" fontSize={16} fontWeight="medium">
@@ -15,6 +15,7 @@ const LastVideos = () => {
       </Text>
       <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
         <Row mx={2}>
+          <Pressable onPress={()=>navigation.navigate('Details')}>
           <Box w={250} mx={2} bg="#373F47" borderRadius={16}>
             <ImageBackground
               imageStyle={{borderRadius: 16}}
@@ -54,6 +55,8 @@ const LastVideos = () => {
               Season 1-Avengers
             </Text>
           </Box>
+          </Pressable>
+          <Pressable onPress={()=>navigation.navigate('Details')}>
           <Box w={250} mx={2} bg="#373F47" borderRadius={16}>
             <ImageBackground
               imageStyle={{borderRadius: 16}}
@@ -93,6 +96,7 @@ const LastVideos = () => {
               Season 1-Avengers
             </Text>
           </Box>
+          </Pressable>
         </Row>
       </ScrollView>
     </Flex>
