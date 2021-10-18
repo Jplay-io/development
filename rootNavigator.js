@@ -16,6 +16,8 @@ import SignUp from './screens/signUp';
 import Subscription from './screens/subscription';
 import Details from './screens/Details';
 import Search from './screens/Search/search';
+import MySubscription from './screens/subscription/mySubscription';
+import Mydownload from './screens/mydownloads/mydownload';
 
 
 
@@ -66,7 +68,7 @@ const RootNavigator = () => {
     return(
         <NavigationContainer>
             <Stack.Navigator
-              initialRouteName="Search"
+              initialRouteName="MyDownloads"
               screenOptions={{
                 headerShown:false,
               }}>
@@ -111,6 +113,20 @@ const RootNavigator = () => {
                 }}
                 name="Search"
                 component={Search}
+              />
+              <Stack.Screen
+                options={{
+                  gestureEnabled:false
+                }}
+                name="MySubscription"
+                component={MySubscription}
+              />
+               <Stack.Screen
+                options={{
+                  gestureEnabled:false
+                }}
+                name="MyDownloads"
+                component={Mydownload}
               />
             </Stack.Navigator>
           </NavigationContainer>
