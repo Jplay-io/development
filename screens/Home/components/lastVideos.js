@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const LastVideos = ({navigation}) => {
   return (
     <Flex mt={2} flex={5}>
-      <Text m={4} color="#fff" fontSize={16} fontWeight="medium">
+      <Text m={4} color="#fff" fontSize={16} fontFamily="Montserrat-Medium" >
         Continue watching for{' '}
         <Text fontWeight="bold" fontSize={16} color="#BC002D">
           Salem

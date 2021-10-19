@@ -44,7 +44,7 @@ const Home = ({navigation}) => {
 
               <Flex flex={3} justifyContent="flex-end">
                 <Center>
-                  <Text fontWeight="bold" color="#fff" fontSize={28}>
+                  <Text letterSpacing={-.28} color="#fff" fontSize={28} fontFamily='Montserrat-Bold'>
                     Under the Open Sky
                   </Text>
                 </Center>

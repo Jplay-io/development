@@ -28,17 +28,16 @@ const GetStart = ({navigation}) => {
         </Flex>
 
         <Flex justifyContent="flex-end" pb={12} px={4} flex={4}>
-          <Text textAlign="center" color="#FFFFFF">
-            Watch millions of films and
+          <Text textAlign="center" color="#FFFFFF" fontFamily='Montserrat-Regular'>
+            Watch millions of films and {"\n"} Tv Shows from the heart of Japan
           </Text>
-          <Text textAlign="center" color="#FFFFFF">
-            Tv Shows from the heart of Japan
-          </Text>
+   
 
           <Button
             mt={8}
             borderRadius={8}
             h={60}
+            fontFamily='Poppins-Medium'
             backgroundColor="#BC082D"
             onPress={() => navigation.navigate('signUp')}>
             Login Or New Account

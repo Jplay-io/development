@@ -9,7 +9,8 @@ import {
   Center,
   View,
   Image,
-  Pressable
+  Pressable,
+  Box,
 } from 'native-base';
 import {Dimensions} from 'react-native';
 import {ImageBackground, useWindowDimensions} from 'react-native';
@@ -32,7 +33,7 @@ const FirstRoute = () => (
             source={require('../../../assets/image11.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium" color='#fff'>
+          <Text fontSize={12} fontWeight="medium" color="#fff">
             Attack of titans
           </Text>
         </Flex>
@@ -44,7 +45,7 @@ const FirstRoute = () => (
             source={require('../../../assets/image5.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium" color='#fff'>
+          <Text fontSize={12} fontWeight="medium" color="#fff">
             Mirai of the Future
           </Text>
         </Flex>
@@ -56,7 +57,7 @@ const FirstRoute = () => (
             source={require('../../../assets/image8.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium" color='#fff'>
+          <Text fontSize={12} fontWeight="medium" color="#fff">
             Doraemon the Mo..
           </Text>
         </Flex>
@@ -68,7 +69,7 @@ const FirstRoute = () => (
             source={require('../../../assets/image6.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium" color='#fff'>
+          <Text fontSize={12} fontWeight="medium" color="#fff">
             Title
           </Text>
         </Flex>
@@ -80,7 +81,7 @@ const FirstRoute = () => (
             source={require('../../../assets/image9.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium" color='#fff'>
+          <Text fontSize={12} fontWeight="medium" color="#fff">
             Title
           </Text>
         </Flex>
@@ -92,7 +93,7 @@ const FirstRoute = () => (
             source={require('../../../assets/image4.png')}
             alt="movie"
           />
-          <Text fontSize={12} fontWeight="medium" color='#fff'>
+          <Text fontSize={12} fontWeight="medium" color="#fff">
             Title
           </Text>
         </Flex>
@@ -103,22 +104,26 @@ const FirstRoute = () => (
 
 const SecondRoute = () => (
   <View m={4} style={{flex: 1}}>
-    <ScrollView nestedScrollEnabled={true}>
+    <ScrollView nestedScrollEnabled={true} showsVerticalScrollIndicator={false}>
       <Flex>
-        <Text fontSize={16} fontWeight="bold" color="#fff">
+        <Text fontSize={16} fontFamily="Montserrat-Bold" color="#fff">
           About the movie
         </Text>
         <Row my={4}>
           <Row>
             <Icon2 name="dot-single" color="#BC002D" size={25} />
-            <Text color="#fff">Action</Text>
+            <Text color="#fff" fontFamily="Montserrat-Regular">
+              Action
+            </Text>
           </Row>
           <Row>
             <Icon2 name="dot-single" color="#BC002D" size={25} />
-            <Text color="#fff">Scifi</Text>
+            <Text color="#fff" fontFamily="Montserrat-Regular">
+              Scifi
+            </Text>
           </Row>
         </Row>
-        <Text fontSize={12} color="#fff">
+        <Text fontSize={12} color="#fff" fontFamily="Montserrat-Regular">
           When Thor’s evil brother, Loki (Tom Hiddleston), gains access to the
           unlimited power of the energy cube called the Tesseract, Nick Fury
           (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero
@@ -139,11 +144,11 @@ const SecondRoute = () => (
               fontWeight="bold">
               CC
             </Text>
-            <Text fontWeight="semibold" color="#7892AA" ml={2}>
+            <Text fontFamily="Montserrat-SemiBold" color="#7892AA" ml={2}>
               Subtitles:
             </Text>
           </Row>
-          <Text fontWeight="bold" color="#fff">
+          <Text fontFamily="Montserrat-Bold" color="#fff">
             Arabic
           </Text>
         </Column>
@@ -158,17 +163,67 @@ const SecondRoute = () => (
               fontWeight="bold">
               AD
             </Text>
-            <Text fontWeight="semibold" color="#7892AA" ml={2}>
+            <Text fontFamily="Montserrat-SemiBold" color="#7892AA" ml={2}>
               Audio:
             </Text>
           </Row>
           <Row>
-            <Text fontWeight="bold" color="#fff">
+            <Text fontFamily="Montserrat-Bold" color="#fff">
               Arabic,
             </Text>
-            <Text fontWeight="bold" color="#fff">
+            <Text fontFamily="Montserrat-Bold" color="#fff">
               English
             </Text>
+          </Row>
+        </Column>
+        <Column>
+          <Text fontFamily="Montserrat-SemiBold" color="#7892AA">
+            Cast:
+          </Text>
+
+          <Row flexWrap="wrap">
+            <Box h={12} bg="#373F47" rounded={77} justifyContent="center" m={1}>
+              <Row alignItems="center" px={2}>
+                <Image
+                  mx={1}
+                  size={35}
+                  rounded={50}
+                  source={require('../../../assets/avatar1.png')}
+                  alt="cast"
+                />
+                <Text color="#fff" fontFamily="Montserrat-Regular">
+                  Sophia Watson
+                </Text>
+              </Row>
+            </Box>
+            <Box h={12} bg="#373F47" rounded={77} justifyContent="center" m={1}>
+              <Row alignItems="center" px={2}>
+                <Image
+                  mx={1}
+                  size={35}
+                  rounded={50}
+                  source={require('../../../assets/avatar2.png')}
+                  alt="cast"
+                />
+                <Text color="#fff" fontFamily="Montserrat-Regular">
+                  John Doe
+                </Text>
+              </Row>
+            </Box>
+            <Box h={12} bg="#373F47" rounded={77} justifyContent="center" m={1}>
+              <Row alignItems="center" px={2}>
+                <Image
+                  mx={1}
+                  size={35}
+                  rounded={50}
+                  source={require('../../../assets/avatar1.png')}
+                  alt="cast"
+                />
+                <Text color="#fff" fontFamily="Montserrat-Regular">
+                  Jane Clarkson
+                </Text>
+              </Row>
+            </Box>
           </Row>
         </Column>
       </Flex>
@@ -221,8 +276,7 @@ const Details = ({navigation}) => {
                 }}>
                 <Flex m={4} alignItems="flex-end" flex={1}>
                   <Pressable
-                  onPress={()=>navigation.goBack()}
-                  
+                    onPress={() => navigation.goBack()}
                     w={10}
                     h={10}
                     display="flex"
@@ -284,7 +338,7 @@ const Details = ({navigation}) => {
                 </Column>
               </Row>
             </Row>
-            <Text fontSize={12} color="#fff">
+            <Text fontSize={12} color="#fff" fontFamily="Montserrat-Regular">
               When Thor’s evil brother, Loki (Tom Hiddleston), gains access to
               the unlimited power of the energy cube called the Tesseract, Nick
               Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a

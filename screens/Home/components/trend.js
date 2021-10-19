@@ -4,7 +4,7 @@ import {Flex, Text, ScrollView, Image, Box, Row} from 'native-base'
 const Trending = () => {
     return (
         <Flex my={5}>
-          <Text m={4} fontSize={16} color="#fff" fontWeight="bold">
+          <Text m={4} fontSize={16} color="#fff" fontFamily="Montserrat-Bold">
             Trending
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
