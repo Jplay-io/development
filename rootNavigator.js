@@ -15,7 +15,7 @@ import Icon3 from 'react-native-vector-icons/FontAwesome5';
 import GetStart from './screens/getStart';
 import SignUp from './screens/signUp';
 import Subscription from './screens/subscription';
-import MyDevices from './screens/mydevices/mydevices';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -69,7 +69,7 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Mydevices"
+        initialRouteName="getStart"
         screenOptions={{
           headerShown: false,
         }}>
@@ -101,14 +101,6 @@ const RootNavigator = () => {
           }}
           name="Main"
           component={MainNavigator}
-        />
-         <Stack.Screen
-          options={{
-            gestureEnabled: false,
-            headerShown: false,
-          }}
-          name="Mydevices"
-          component={MyDevices}
         />
       </Stack.Navigator>
     </NavigationContainer>
