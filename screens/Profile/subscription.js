@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Flex,
   Text,
@@ -12,16 +12,55 @@ import {
   Checkbox,
   Pressable,
 } from 'native-base';
+
+import {SvgXml} from 'react-native-svg';
+import {circle, check} from '../../assets/icons';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon1 from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/FontAwesome5';
 
 const MySubscription = ({navigation}) => {
-  const subscription = [
-    {time: '1 Month', coin: '$10.49'},
-    {time: '3 Month', coin: '$30.49'},
-    {time: '1 Year', coin: '$50.49'},
-  ];
+  
+  const [subs, setSubs] = useState({
+    selected: 1,
+    first: {active: true},
+    second: {active: false},
+    third: {active: false},
+  });
+  const ChangeHandler = e => {
+    switch (e) {
+      case 'first': {
+        setSubs({
+          selected: 1,
+          first: {active: true},
+          second: {active: false},
+          third: {active: false},
+        });
+        break;
+      }
+      case 'second': {
+        setSubs({
+          selected: 2,
+          first: {active: false},
+          second: {active: true},
+          third: {active: false},
+        });
+        break;
+      }
+      case 'third': {
+        setSubs({
+          selected: 3,
+          first: {active: false},
+          second: {active: false},
+          third: {active: true},
+        });
+        break;
+      }
+      default: {
+        return subs;
+      }
+    }
+  };
   return (
     <Flex safeArea flex={1} bg="#151F28">
       <ScrollView>
@@ -91,28 +130,80 @@ const MySubscription = ({navigation}) => {
               </Text>
             </Row>
           </Flex>
-          <VStack p={6} space={4} mt={4}>
-            {subscription.map((el, index) => {
-              return (
-                <Box bg="#121922" borderRadius={20} h={20} key={index}>
-                  <Row
-                    justifyContent="space-between"
-                    h="100%"
-                    px={5}
-                    alignItems="center">
-                    <Column>
-                      <Text color="white">{el.time}</Text>
-                      <Text color="#7A809D">{el.coin}</Text>
-                    </Column>
-                    <Checkbox
-                      colorScheme="danger"
-                      accessibilityLabel="Subscription coast"
-                      borderColor="#4E5175"
-                    />
-                  </Row>
-                </Box>
-              );
-            })}
+          <VStack space={4} mt={4} mx={4}>
+            <Pressable onPress={() => ChangeHandler('first')}>
+              <Box
+                bg="#121922"
+                borderRadius={20}
+                h={20}
+                borderWidth={subs.first.active ? 1 : 0}
+                borderColor="#BC082D">
+                <Row
+                  justifyContent="space-between"
+                  h="100%"
+                  px={5}
+                  alignItems="center">
+                  <Column>
+                    <Text color="white">1 Month</Text>
+                    <Text color="#7A809D">$10.49</Text>
+                  </Column>
+
+                  {subs.first.active ? (
+                    <SvgXml xml={check} width={30} height={30} />
+                  ) : (
+                    <SvgXml xml={circle} width={30} height={30} />
+                  )}
+                </Row>
+              </Box>
+            </Pressable>
+            <Pressable onPress={() => ChangeHandler('second')}>
+              <Box
+                bg="#121922"
+                borderRadius={20}
+                h={20}
+                borderWidth={subs.second.active ? 1 : 0}
+                borderColor="#BC082D">
+                <Row
+                  justifyContent="space-between"
+                  h="100%"
+                  px={5}
+                  alignItems="center">
+                  <Column>
+                    <Text color="white">3 Month</Text>
+                    <Text color="#7A809D">$30.49</Text>
+                  </Column>
+                  {subs.second.active ? (
+                    <SvgXml xml={check} width={30} height={30} />
+                  ) : (
+                    <SvgXml xml={circle} width={30} height={30} />
+                  )}
+                </Row>
+              </Box>
+            </Pressable>
+            <Pressable onPress={() => ChangeHandler('third')}>
+              <Box
+                bg="#121922"
+                borderRadius={20}
+                h={20}
+                borderWidth={subs.third.active ? 1 : 0}
+                borderColor="#BC082D">
+                <Row
+                  justifyContent="space-between"
+                  h="100%"
+                  px={5}
+                  alignItems="center">
+                  <Column>
+                    <Text color="white">1 Year</Text>
+                    <Text color="#7A809D">$50.49</Text>
+                  </Column>
+                  {subs.third.active ? (
+                    <SvgXml xml={check} width={30} height={30} />
+                  ) : (
+                    <SvgXml xml={circle} width={30} height={30} />
+                  )}
+                </Row>
+              </Box>
+            </Pressable>
           </VStack>
           <Button
             mx={6}
