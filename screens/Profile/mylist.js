@@ -12,6 +12,7 @@ import Icon2 from 'react-native-vector-icons/FontAwesome5';
 import {Dimensions} from 'react-native';
 
 const MyList = ({navigation}) => {
+  const width = Dimensions.get('window').width;
   const mylists = [
     {name: 'Movie Name', image: require('../../assets/image1.png')},
     {name: 'Movie Name', image: require('../../assets/image3.png')},
@@ -120,8 +121,8 @@ const MyList = ({navigation}) => {
           <Row justifyContent="space-between" flexWrap="wrap">
             {mylists.map((el, index) => {
               return (
-                <Flex key={index} my={2}>
-                  <Center mx={1} direction="column" alignItems="center">
+                <Flex  key={index} my={2}>
+                  <Center  w={width / 3.5} my={9} height={width / 3.5} mx={1} direction="column" alignItems="center">
                     <Image
                       alt="not Found"
                       source={el.image}

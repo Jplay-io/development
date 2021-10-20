@@ -91,8 +91,8 @@ const MyWallet = ({navigation}) => {
             </Flex>
           </Flex>
           <Flex my={5} direction="row" justifyContent="center">
-            <Icon2 name="share-alt" size={24} color="#ccc" />
-            <Text fontSize={16} color="#ccc" ml={2}>
+            <Icon2 name="share-alt" size={22} color="#ccc" />
+            <Text fontSize={14} ml={2} color="#ccc" >
               Share with friends and earn. Share now
             </Text>
           </Flex>
