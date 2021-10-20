@@ -1,0 +1,1 @@
+export default '<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31"><g id="Group_3932" data-name="Group 3932" transform="translate(-300.5 -533.5)"><path id="Path" d="M15,30A15,15,0,1,0,0,15,15,15,0,0,0,15,30Z" transform="translate(301 534)" fill="none" stroke="#4e5175" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></svg>'

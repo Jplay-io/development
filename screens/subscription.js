@@ -9,20 +9,12 @@ import {
   Box,
   Column,
   ScrollView,
-  Checkbox,
   Pressable,
 } from 'native-base';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon1 from 'react-native-vector-icons/MaterialIcons';
-import Icon2 from 'react-native-vector-icons/FontAwesome5';
-import Icon3 from 'react-native-vector-icons/Feather';
+import {SvgXml} from 'react-native-svg';
+import {circle, check, key, download, hd, noAds, exit} from '../assets/icons';
 
 const Subscription = ({navigation}) => {
-  const subscription = [
-    {time: '1 Month', coin: '$10.49'},
-    {time: '3 Month', coin: '$30.49'},
-    {time: '1 Year', coin: '$50.49'},
-  ];
   const [subs, setSubs] = useState({
     selected: 1,
     first: {active: true},
@@ -30,7 +22,6 @@ const Subscription = ({navigation}) => {
     third: {active: false},
   });
   const ChangeHandler = e => {
-    console.log(e);
     switch (e) {
       case 'first': {
         setSubs({
@@ -69,17 +60,7 @@ const Subscription = ({navigation}) => {
       <ScrollView>
         <Flex p={6} justifyContent="space-evenly">
           <Flex alignItems="flex-end">
-            <Flex
-              w={10}
-              h={10}
-              display="flex"
-              alignItems="center"
-              justifyContent="space-around"
-              borderRadius={10}
-              borderWidth={1}
-              borderColor="#F1F1F1">
-              <Icon2 name="times" size={20} color="#F1F1F1" />
-            </Flex>
+            <SvgXml xml={exit} />
           </Flex>
           <Flex>
             <Text
@@ -105,25 +86,25 @@ const Subscription = ({navigation}) => {
               />
             </Row>
             <Row my={1} alignItems="center">
-              <Icon name="lock-outline" size={25} color="#FFB465" />
+              <SvgXml xml={key} />
               <Text ml={3} color="white" fontFamily="Montserrat-Regular">
                 Unlock premium movies and dramas
               </Text>
             </Row>
             <Row my={1} alignItems="center">
-              <Icon name="download" size={25} color="#039FC3" />
+              <SvgXml xml={download} />
               <Text ml={3} color="white" fontFamily="Montserrat-Regular">
                 Unlimited download
               </Text>
             </Row>
             <Row my={1} alignItems="center">
-              <Icon1 name="hd" size={25} color="#875DE3" />
+              <SvgXml xml={hd} />
               <Text ml={3} color="white" fontFamily="Montserrat-Regular">
                 Watch in HD up to 4K resolution
               </Text>
             </Row>
             <Row my={1} alignItems="center">
-              <Icon2 name="ban" size={25} color="#FC6385" />
+              <SvgXml xml={noAds} />
               <Text ml={3} color="white" fontFamily="Montserrat-Regular">
                 No ads while watching
               </Text>
@@ -148,9 +129,9 @@ const Subscription = ({navigation}) => {
                   </Column>
 
                   {subs.first.active ? (
-                    <Icon1 name="check-circle" size={30} color="#BC082D" />
+                    <SvgXml xml={check} width={30} height={30} />
                   ) : (
-                    <Icon3 name="circle" size={30} color="#4E5175" />
+                    <SvgXml xml={circle} width={30} height={30} />
                   )}
                 </Row>
               </Box>
@@ -172,9 +153,9 @@ const Subscription = ({navigation}) => {
                     <Text color="#7A809D">$30.49</Text>
                   </Column>
                   {subs.second.active ? (
-                    <Icon1 name="check-circle" size={30} color="#BC082D" />
+                    <SvgXml xml={check} width={30} height={30} />
                   ) : (
-                    <Icon3 name="circle" size={30} color="#4E5175" />
+                    <SvgXml xml={circle} width={30} height={30} />
                   )}
                 </Row>
               </Box>
@@ -196,9 +177,9 @@ const Subscription = ({navigation}) => {
                     <Text color="#7A809D">$50.49</Text>
                   </Column>
                   {subs.third.active ? (
-                    <Icon1 name="check-circle" size={30} color="#BC082D" />
+                    <SvgXml xml={check} width={30} height={30} />
                   ) : (
-                    <Icon3 name="circle" size={30} color="#4E5175" />
+                    <SvgXml xml={circle} width={30} height={30} />
                   )}
                 </Row>
               </Box>

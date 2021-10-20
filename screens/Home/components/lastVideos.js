@@ -15,8 +15,8 @@ const LastVideos = ({navigation}) => {
       </Text>
       <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
         <Row mx={2}>
-          <Pressable onPress={()=>navigation.navigate('Details')}>
-          <Box w={250} mx={2} bg="#373F47" borderRadius={16}>
+          <Pressable onPress={()=>navigation.navigate('Details')} >
+          <Box w={250} mx={2} bg="#373F47" borderRadius={16} shadow={6}>
             <ImageBackground
               imageStyle={{borderRadius: 16}}
               source={require('../../../assets/image10.png')}
@@ -57,7 +57,7 @@ const LastVideos = ({navigation}) => {
           </Box>
           </Pressable>
           <Pressable onPress={()=>navigation.navigate('Details')}>
-          <Box w={250} mx={2} bg="#373F47" borderRadius={16}>
+          <Box w={250} mx={2} bg="#373F47" borderRadius={16} shadow={6}>
             <ImageBackground
               imageStyle={{borderRadius: 16}}
               source={require('../../../assets/image8.png')}

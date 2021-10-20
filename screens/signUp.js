@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Flex, Image, Input, Button, ScrollView} from 'native-base';
+import {Text, Flex, Image, Input, Button, ScrollView, Row} from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import Background from '../components/background';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
