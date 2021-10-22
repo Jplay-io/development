@@ -86,7 +86,15 @@ const MySubscription = ({navigation}) => {
                 <Icon2 name="angle-left" size={20} color="#F1F1F1" />
               </Flex>
             </Pressable>
-            <Text color="#ffff" ml={20} fontSize={16} fontWeight="bold">
+            <Text  
+            color="#ffff"
+            textAlign="center"
+            fontSize={16}
+            position="absolute"
+            left="40%"
+            style={{transform: [{translateX: -10}]}}
+            fontFamily="Montserrat-Bold"
+            >
               My Subscription
             </Text>
           </Flex>

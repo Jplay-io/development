@@ -32,11 +32,14 @@ const MyWallet = ({navigation}) => {
               </Flex>
             </Pressable>
             <Text
-              color="#ffff"
-              style={{marginHorizontal: 100}}
-              textAlign="center"
-              fontSize={18}
-              fontWeight="bold">
+            color="#ffff"
+            textAlign="center"
+            fontSize={16}
+            position="absolute"
+            left="45%"
+            style={{transform: [{translateX: -10}]}}
+            fontFamily="Montserrat-Bold"  
+            >
               My Wallet
             </Text>
           </Flex>
