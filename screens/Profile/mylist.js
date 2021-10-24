@@ -68,6 +68,7 @@ const MyList = ({navigation}) => {
                 <Image
                   source={require('../../assets/image10.png')}
                   alt="not Found"
+                  width="full"
                   height={156}
                   borderRadius={10}
                 />
@@ -83,6 +84,7 @@ const MyList = ({navigation}) => {
                 <Image
                   source={require('../../assets/image5.png')}
                   alt="not Found"
+                  
                   height={156}
                   borderRadius={10}
                 />
@@ -96,8 +98,9 @@ const MyList = ({navigation}) => {
                 direction="column"
                 alignItems="center">
                 <Image
-                  source={require('../../assets/image10.png')}
+                  source={require('../../assets/image8.png')}
                   alt="not Found"
+                  width="full"
                   height={156}
                   borderRadius={10}
                 />
@@ -113,7 +116,7 @@ const MyList = ({navigation}) => {
                 <Image
                   alt="not Found"
                   source={require('../../assets/image1.png')}
-                  width={105}
+                  width="full"
                   height={156}
                   borderRadius={10}
                 />
@@ -126,7 +129,7 @@ const MyList = ({navigation}) => {
         </Flex>
         <Text
           mx={4}
-          mt={4}
+          mt={10}
           fontSize={16}
           fontFamily="Montserrat-Bold"
           color="#fff">
@@ -141,6 +144,7 @@ const MyList = ({navigation}) => {
                     <Image
                       alt="not Found"
                       source={el.image}
+                      width="full"
                       height={156}
                       borderRadius={10}
                     />
