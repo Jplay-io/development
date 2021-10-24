@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {NativeBaseProvider} from 'native-base';
 import SplashScreen from 'react-native-splash-screen';
 import RootNavigator from './rootNavigator';
+import { StatusBar } from 'native-base'
 
 class App extends Component {
   componentDidMount() {
@@ -12,10 +13,13 @@ class App extends Component {
   render() {
     return (
       <SafeAreaProvider>
+     
         <NativeBaseProvider>
+        {/* <StatusBar barStyle='auto' /> */}
           <RootNavigator />
         </NativeBaseProvider>
-      </SafeAreaProvider>
+        
+     </SafeAreaProvider>
     );
   }
 }

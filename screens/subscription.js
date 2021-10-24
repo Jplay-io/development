@@ -189,6 +189,7 @@ const Subscription = ({navigation}) => {
             onPress={() => navigation.navigate('Main')}
             mt={8}
             h={60}
+            borderRadius={8}
             backgroundColor="#BC082D">
             Get Subscription
           </Button>

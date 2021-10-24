@@ -9,7 +9,6 @@ import {
   Box,
   Column,
   ScrollView,
-  Checkbox,
   Pressable,
 } from 'native-base';
 
@@ -209,6 +208,7 @@ const MySubscription = ({navigation}) => {
             mx={6}
             onPress={() => navigation.navigate('Main')}
             mt={8}
+            borderRadius={8}
             h={60}
             backgroundColor="#BC082D">
             Get Subscription

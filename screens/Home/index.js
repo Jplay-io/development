@@ -10,10 +10,12 @@ import Action from './components/action';
 import MyList from './components/myList';
 import Top from './components/top';
 import LastVideos from './components/lastVideos';
+import { SafeAreaView} from 'react-native-safe-area-context';
 
 const Home = ({navigation}) => {
   return (
-    <Flex safeArea flex={1} bg="#151F28">
+    <SafeAreaView style={{flex:1}}>
+      <Flex safeArea flex={1} bg="#151F28">
       <ScrollView flex={1}>
         <ImageBackground
           resizeMode="cover"
@@ -114,6 +116,7 @@ const Home = ({navigation}) => {
         <Top />
       </ScrollView>
     </Flex>
+    </SafeAreaView>
   );
 };
 

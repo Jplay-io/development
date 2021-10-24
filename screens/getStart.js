@@ -1,13 +1,12 @@
 import React from 'react';
-import {Text, Image, Flex, Button, Column, Row, StatusBar} from 'native-base';
-
+import {Text, Image, Flex, Button} from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import Background from '../components/background';
 
+
 const GetStart = ({navigation}) => {
   return (
-    <Flex safeArea flex={1}>
-      <StatusBar backgroundColor="black" />
+      <Flex safeArea  flex={1} >
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 0, y: 1}}

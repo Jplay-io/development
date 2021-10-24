@@ -25,18 +25,11 @@ const MyList = ({navigation}) => {
     <Flex safeArea flex={1} bg="#151F28">
       <ScrollView>
         <Flex>
-          <Row
-            bg="#f1f1f122"
-            py={4}
-            alignItems="center"
-            px={4}
-            // justifyContent='center'
-            mb={4}>
+          <Row bg="#f1f1f122" py={4} alignItems="center" px={4} mb={4}>
             <Pressable onPress={() => navigation.goBack()}>
               <Flex
                 w={10}
                 h={10}
-                display="flex"
                 alignItems="center"
                 justifyContent="space-around"
                 borderRadius={10}
