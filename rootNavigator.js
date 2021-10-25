@@ -16,7 +16,7 @@ import Icon3 from 'react-native-vector-icons/FontAwesome5';
 import GetStart from './screens/getStart';
 import SignUp from './screens/signUp';
 import Subscription from './screens/subscription';
-
+import Video from './screens/Home/video';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,6 +41,17 @@ function ScreenTabIcon(routeName, color) {
 }
 
 const MainNavigator = () => {
+  getTabBarVisibility = route => {
+    const routeName = route.state
+      ? route.state.routes[route.state.index].name
+      : '';
+
+    if (routeName === 'Video') {
+      return 'none';
+    }
+
+    return true;
+  };
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -58,7 +69,11 @@ const MainNavigator = () => {
         },
         tabBarIcon: ({color}) => ScreenTabIcon(route.name, color),
       })}>
-      <Tab.Screen name="Home" component={HomeStackNavigator} />
+      <Tab.Screen
+        name="Home"
+        component={HomeStackNavigator}
+        // options={({route}) => ({tabBarStyle: {display: 'none'}})}
+      />
       <Tab.Screen name="Download" component={DownloadStackNavigator} />
       <Tab.Screen name="Search" component={SearchStackNavigator} />
       <Tab.Screen name="Profile" component={ProfileStackNavigator} />
@@ -74,7 +89,6 @@ const RootNavigator = () => {
         screenOptions={{
           headerShown: false,
         }}>
-           
         <Stack.Screen
           options={{
             gestureEnabled: false,
@@ -104,6 +118,9 @@ const RootNavigator = () => {
           name="Main"
           component={MainNavigator}
         />
+        <Stack.Group screenOptions={{presentation: 'modal'}}>
+          <Stack.Screen name="Video" component={Video} />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );
