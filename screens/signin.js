@@ -1,63 +1,13 @@
-import React, {useState} from 'react';
-import {
-  Text,
-  Flex,
-  Image,
-  Input,
-  Button,
-  ScrollView,
-  Row,
-  Center,
-} from 'native-base';
+import React from 'react';
+import {Text, Flex, Image, Input, Button, ScrollView, Row} from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import Background from '../components/background';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon1 from 'react-native-vector-icons/Fontisto';
-import {Dimensions, Pressable} from 'react-native';
-import auth from '@react-native-firebase/auth';
+import {Dimensions} from 'react-native';
 
-const SignUp = ({navigation}) => {
+const SignIn = ({navigation}) => {
   const height = Dimensions.get('screen').height;
-  const [signup, setSignup] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const submitHandler = () => {
-    if (signup) {
-      auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          navigation.navigate('Subscription');
-          console.log('User account created & signed in!');
-        })
-        .catch(error => {
-          if (error.code === 'auth/email-already-in-use') {
-            console.log('That email address is already in use!');
-          }
-
-          if (error.code === 'auth/invalid-email') {
-            console.log('That email address is invalid!');
-          }
-
-          console.error(error);
-        });
-    } else {
-      auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(() => {
-          navigation.navigate('Subscription');
-          console.log('User  signed in!');
-        })
-        .catch(error => {
-          if (error.code === 'auth/invalid-email') {
-            console.log('That email address is invalid!');
-          }
-
-          console.error(error);
-        });
-    }
-  };
-
   return (
     <Flex flex={1} safeArea>
       <ScrollView keyboardShouldPersistTaps="always">
@@ -71,7 +21,7 @@ const SignUp = ({navigation}) => {
               height: '100%',
               position: 'relative',
             }}>
-            <Flex flex={1} pb={10}>
+            <Flex>
               <Flex h={height / 5} justifyContent="center" alignItems="center">
                 <Image
                   w={194}
@@ -81,15 +31,8 @@ const SignUp = ({navigation}) => {
                 />
               </Flex>
 
-              <Flex justifyContent="center" px={4}>
+              <Flex h={height - height / 5} justifyContent="center" px={4}>
                 <Flex>
-                  <Text
-                    fontSize={20}
-                    fontFamily="Montserrat-Bold"
-                    textAlign="center"
-                    color="#FFFFFF">
-                    {signup ? 'Sign Up' : 'Sign In'}
-                  </Text>
                   <Text my={5} textAlign="center" color="#FFFFFF">
                     Enter your mobile number or email to continue
                   </Text>
@@ -98,8 +41,7 @@ const SignUp = ({navigation}) => {
                       borderRadius={6}
                       px={4}
                       variant="unstyled"
-                      placeholder="Mobile number or email"
-                      onChangeText={val => setEmail(val)}
+                      placeholder="Mobile number"
                       h={50}
                       InputRightElement={
                         <Text mr={4} fontSize={22}>
@@ -107,14 +49,10 @@ const SignUp = ({navigation}) => {
                         </Text>
                       }
                     />
-                  </Flex>
-
-                  <Flex bg="#fff" rounded={6} mt={4}>
                     <Input
                       borderRadius={6}
                       px={4}
                       variant="unstyled"
-                      onChangeText={val => setPassword(val)}
                       placeholder="Password"
                       h={50}
                     />
@@ -125,7 +63,7 @@ const SignUp = ({navigation}) => {
                     h={50}
                     borderRadius={6}
                     backgroundColor="#BC082D"
-                    onPress={submitHandler}>
+                    onPress={() => navigation.navigate('Subscription')}>
                     Continue
                   </Button>
                   <Text mt={4} textAlign="center" color="#FFFFFF">
@@ -140,7 +78,7 @@ const SignUp = ({navigation}) => {
                     leftIcon={<Icon color="#fff" name="apple" size={24} />}
                     h={50}
                     mt={4}>
-                    {signup ? 'Sign up with Apple' : 'Sign in with Apple'}
+                    Sign ip with Apple
                   </Button>
                   <Button
                     bg="transparent"
@@ -151,7 +89,7 @@ const SignUp = ({navigation}) => {
                     leftIcon={<Icon1 color="#fff" name="facebook" size={24} />}
                     h={50}
                     mt={4}>
-                    {signup ? 'Sign up with Facebook' : 'Sign in with Facebook'}
+                    Sign up with Facebook
                   </Button>
                   <Button
                     bg="transparent"
@@ -164,25 +102,8 @@ const SignUp = ({navigation}) => {
                     }
                     h={50}
                     mt={4}>
-                    {signup ? 'Sign up with Google' : 'Sign in with Google'}
+                    Sign up with Google
                   </Button>
-                  <Center>
-                    <Row my={2}>
-                      {signup ? (
-                        <Text color="#fff">Already have an account?</Text>
-                      ) : (
-                        <Text color="#fff">Not a member yet?</Text>
-                      )}
-                      <Pressable onPress={() => setSignup(!signup)}>
-                        <Text
-                          mx={1}
-                          fontFamily="Montserrat-Bold"
-                          color="#BC082D">
-                          {signup ? 'Sign In' : 'Sign Up'}
-                        </Text>
-                      </Pressable>
-                    </Row>
-                  </Center>
                 </Flex>
               </Flex>
             </Flex>
@@ -194,4 +115,4 @@ const SignUp = ({navigation}) => {
   );
 };
 
-export default SignUp;
+export default SignIn;

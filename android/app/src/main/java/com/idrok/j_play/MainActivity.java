@@ -1,4 +1,4 @@
-package com.j_play;
+package com.idrok.j_play;
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
