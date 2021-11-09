@@ -20,8 +20,6 @@ import MyList from './components/myList';
 import Top from './components/top';
 import LastVideos from './components/lastVideos';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useDispatch, useSelector } from 'react-redux';
-import { HomeData } from '../Store/action/HomeAction';
 import { useNavigation } from '@react-navigation/native';
 import firestore from "@react-native-firebase/firestore"
 const Home = () => {
@@ -32,7 +30,6 @@ const Home = () => {
         getData()
     }, []);
     const getData = async () => {
-
         try {
             const top = await firestore().collection("Movies").orderBy("view_count", "desc").limit(1).get()
             const movies = await firestore().collection("Movies").where("tags", "array-contains-any", ["Action", "Comedy"]).get()
@@ -48,7 +45,7 @@ const Home = () => {
             </View>
         );
     }
-    console.log(data);
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Flex safeArea flex={1} bg="#151F28">
@@ -79,7 +76,6 @@ const Home = () => {
                                         alt="j_play"
                                     />
                                 </Flex>
-
                                 <Flex flex={3} justifyContent="flex-end">
                                     <Center>
                                         <Text
