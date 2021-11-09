@@ -309,7 +309,9 @@ const Details = () => {
             </Flex>
           </ImageBackground>
           <Flex p={4}>
-            <Button borderRadius={16} mt={4} h={50} backgroundColor="#BC082D">
+            <Button onPress={() => {
+              navigation.navigate("Video", { url: movies?._data?.mov_type?.url1360 })
+            }} borderRadius={16} mt={4} h={50} backgroundColor="#BC082D">
               <Row>
                 <Icon1 size={27} color="#fff" name="play-circle" />
                 <Text ml={2} fontSize={16} fontWeight="bold" color="#fff">

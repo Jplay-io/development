@@ -98,7 +98,7 @@ const SignUp = () => {
             Alert.alert(JSON.stringify(error))
         }
     }
-
+    console.log("singup")
     return (
         <Flex flex={1} safeArea>
             <ScrollView keyboardShouldPersistTaps="always">
