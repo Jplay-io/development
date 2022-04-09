@@ -44,7 +44,8 @@ const SignUp = ({navigation}) => {
     } else {
       auth()
         .signInWithEmailAndPassword(email, password)
-        .then(() => {
+        .then(res => {
+          console.log(res);
           navigation.navigate('Subscription');
           console.log('User  signed in!');
         })
